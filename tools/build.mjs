@@ -1,0 +1,10 @@
+import { build } from 'esbuild';
+import { cp, mkdir, rm } from 'node:fs/promises';
+await rm('dist', { recursive: true, force: true });
+await mkdir('dist/assets/js', { recursive: true });
+await cp('web/css', 'dist/assets/css', { recursive: true });
+await cp('web/fonts', 'dist/assets/fonts', { recursive: true });
+await cp('web/index.html', 'dist/index.html');
+await cp('node_modules/sql.js/dist/sql-wasm.wasm', 'dist/sql-wasm.wasm');
+await build({ entryPoints: ['web/js/application.js'], outdir: 'dist/assets/js', bundle: true, splitting: true, format: 'esm', platform: 'browser', target: ['safari15', 'chrome100'], external: ['fs', 'path', 'crypto'], logLevel: 'warning', chunkNames: 'chunks/[name]-[hash]' });
+console.log('Built offline app in dist/. Native apps bundle these files.');

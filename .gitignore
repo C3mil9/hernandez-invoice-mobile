@@ -1,0 +1,13 @@
+node_modules/
+dist/
+android/.gradle/
+android/local.properties
+android/app/build/
+ios/App/Pods/
+ios/App/build/
+*.sqlite3*
+*.db
+*.invoice-backup.json
+*.keystore
+*.jks
+.DS_Store

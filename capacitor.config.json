@@ -1,0 +1,15 @@
+{
+  "appId": "com.hernandez.invoice",
+  "appName": "Hernandez Invoice",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "CapacitorSQLite": {
+      "iosDatabaseLocation": "Library/CapacitorDatabase",
+      "iosIsEncryption": false,
+      "androidIsEncryption": false
+    }
+  }
+}
